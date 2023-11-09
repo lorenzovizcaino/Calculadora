@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/gris">
+
+
+    <Button
+        android:id="@+id/boton_igual"
+        style="@style/boton_igual"
+        android:text="="
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_coma"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text=","
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/boton_igual" />
+
+    <Button
+        android:id="@+id/boton_0"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/boton_coma" />
+
+    <Button
+        android:id="@+id/boton_mas_menos"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="+/-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/boton_0" />
+
+
+    <Button
+        android:id="@+id/boton_mas"
+        style="@style/boton_calculadora"
+        android:text="+"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_igual"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_3"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@id/boton_coma"
+        app:layout_constraintEnd_toStartOf="@+id/boton_mas" />
+
+    <Button
+        android:id="@+id/boton_2"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@id/boton_0"
+        app:layout_constraintEnd_toStartOf="@+id/boton_3" />
+
+    <Button
+        android:id="@+id/boton_1"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@id/boton_mas_menos"
+        app:layout_constraintEnd_toStartOf="@+id/boton_2" />
+
+    <Button
+        android:id="@+id/boton_menos"
+        style="@style/boton_calculadora"
+        android:text="-"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_mas"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_6"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@id/boton_3"
+        app:layout_constraintEnd_toStartOf="@+id/boton_menos" />
+
+    <Button
+        android:id="@+id/boton_5"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@id/boton_2"
+        app:layout_constraintEnd_toStartOf="@+id/boton_6" />
+
+    <Button
+        android:id="@+id/boton_4"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@id/boton_1"
+        app:layout_constraintEnd_toStartOf="@+id/boton_5" />
+
+    <Button
+        android:id="@+id/boton_por"
+        style="@style/boton_calculadora"
+        android:text="X"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_menos"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_9"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@id/boton_6"
+        app:layout_constraintEnd_toStartOf="@+id/boton_por" />
+
+    <Button
+        android:id="@+id/boton_8"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@id/boton_5"
+        app:layout_constraintEnd_toStartOf="@+id/boton_9" />
+
+    <Button
+        android:id="@+id/boton_7"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@id/boton_4"
+        app:layout_constraintEnd_toStartOf="@+id/boton_8" />
+
+    <Button
+        android:id="@+id/boton_dividir"
+        style="@style/boton_calculadora"
+        android:text="÷"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_por"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_dos_raiz_x"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="²√x"
+        app:layout_constraintBottom_toTopOf="@id/boton_9"
+        app:layout_constraintEnd_toStartOf="@+id/boton_dividir" />
+
+    <Button
+        android:id="@+id/boton_x_cuadrado"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="x²"
+        app:layout_constraintBottom_toTopOf="@id/boton_8"
+        app:layout_constraintEnd_toStartOf="@+id/boton_dos_raiz_x" />
+
+    <Button
+        android:id="@+id/boton_1_barra_x"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="1/x"
+        app:layout_constraintBottom_toTopOf="@id/boton_7"
+        app:layout_constraintEnd_toStartOf="@+id/boton_x_cuadrado" />
+
+    <Button
+        android:id="@+id/boton_retroceso"
+        style="@style/boton_calculadora"
+        android:text="Del"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_dividir"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_C"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@id/boton_dos_raiz_x"
+        app:layout_constraintEnd_toStartOf="@+id/boton_retroceso" />
+
+    <Button
+        android:id="@+id/boton_CE"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="CE"
+        app:layout_constraintBottom_toTopOf="@id/boton_x_cuadrado"
+        app:layout_constraintEnd_toStartOf="@+id/boton_C" />
+
+    <Button
+        android:id="@+id/boton_tanto_por_ciento"
+        style="@style/boton_calculadora"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="%"
+        app:layout_constraintBottom_toTopOf="@id/boton_1_barra_x"
+        app:layout_constraintEnd_toStartOf="@+id/boton_CE" />
+
+    <Button
+        android:id="@+id/boton_memoria"
+        style="@style/boton_calculadora_peq"
+        android:text="M↓"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toTopOf="@id/boton_retroceso"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/boton_almacenar_memoria"
+        style="@style/boton_calculadora_peq"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:text="MS"
+        app:layout_constraintBottom_toTopOf="@id/boton_C"
+        app:layout_constraintEnd_toStartOf="@+id/boton_memoria" />
+
+    <Button
+        android:id="@+id/boton_restar_memoria"
+        style="@style/boton_calculadora_peq"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:text="M-"
+        app:layout_constraintBottom_toTopOf="@id/boton_C"
+        app:layout_constraintEnd_toStartOf="@+id/boton_almacenar_memoria" />
+
+    <Button
+        android:id="@+id/boton_sumar_memoria"
+        style="@style/boton_calculadora_peq"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:text="M+"
+        app:layout_constraintBottom_toTopOf="@id/boton_CE"
+        app:layout_constraintEnd_toStartOf="@+id/boton_restar_memoria" />
+
+    <Button
+        android:id="@+id/boton_recuperar_memoria"
+        style="@style/boton_calculadora_peq"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:text="MR"
+        app:layout_constraintBottom_toTopOf="@id/boton_tanto_por_ciento"
+        app:layout_constraintEnd_toStartOf="@+id/boton_sumar_memoria" />
+
+    <Button
+        android:id="@+id/boton_borrar_toda_la_memoria"
+        style="@style/boton_calculadora_peq"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
+        android:text="MR"
+        app:layout_constraintBottom_toTopOf="@id/boton_tanto_por_ciento"
+        app:layout_constraintEnd_toStartOf="@+id/boton_recuperar_memoria" />
+
+    <TextView
+        android:id="@+id/parcial"
+        android:layout_width="360dp"
+        android:layout_height="51dp"
+        android:text="TextView"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="355dp"
+        android:layout_height="114dp"
+        android:text="TextView"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parcial" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
