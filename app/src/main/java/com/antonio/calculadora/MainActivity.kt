@@ -194,11 +194,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 "=" -> {
                     igual=true
+
                     when(operacionAnterior){
                         "x" -> {
                             println("hola")
                             binding.parcial.text=binding.total.text.toString()+" x "+comprobarEntero(num2Igual)+" = "
                             println("hola2")
+                            var longitud=binding.total.text.toString().length
+                            println(longitud)
                             num1=binding.total.text.toString().toDouble()
                             resultado=num1*num2Igual
                             println(resultado)
