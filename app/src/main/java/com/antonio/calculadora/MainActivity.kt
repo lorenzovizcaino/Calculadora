@@ -11,8 +11,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     var num1=0.0
     var num2=0.0
+    var num2Igual=0.0 //esta variable se utiliza cuando se pulsa el igual seguido para que no nos cambie el num2
     var resultado=0.0
     var resultadoTexto=""
+    var igual=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         var operacion=""
+        var operacionAnterior=""
+
 
         binding.botonC.setOnClickListener {
             binding.total.text="0"
@@ -144,36 +148,70 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.botonIgual.setOnClickListener {
-            binding.parcial.text=binding.parcial.text.toString()+binding.total.text.toString()+" = "
-            num2= binding.total.text.toString().toDouble()
+
+
+
+            if(!igual){
+                binding.parcial.text=binding.parcial.text.toString()+binding.total.text.toString()+" = "
+                num2Igual=num2
+                num2= binding.total.text.toString().toDouble()
+
+            }
+
+
+
             binding.total.text=""
 
 
             when(operacion){
                 "x" -> {
+                    igual=false;
                     resultado=num1*num2
                     resultadoTexto=comprobarEntero(resultado)
                     binding.total.text=resultadoTexto
+                    operacionAnterior="x"
                 }
                 "+" -> {
+                    igual=false;
                     resultado=num1+num2
                     resultadoTexto=comprobarEntero(resultado)
                     binding.total.text=resultadoTexto
+                    operacionAnterior="+"
                 }
                 "÷" -> {
+                    igual=false;
                     resultado=num1/num2
                     resultadoTexto=comprobarEntero(resultado)
                     binding.total.text=resultadoTexto
+                    operacionAnterior="÷"
                 }
                 "-" -> {
+                    igual=false;
                     resultado=num1-num2
                     resultadoTexto=comprobarEntero(resultado)
                     binding.total.text=resultadoTexto
+                    operacionAnterior="-"
+                }
+                "=" -> {
+                    igual=true
+                    when(operacionAnterior){
+                        "x" -> {
+                            println("hola")
+                            binding.parcial.text=binding.total.text.toString()+" x "+comprobarEntero(num2Igual)+" = "
+                            println("hola2")
+                            num1=binding.total.text.toString().toDouble()
+                            resultado=num1*num2Igual
+                            println(resultado)
+                            resultadoTexto=comprobarEntero(resultado)
+                            binding.total.text=resultadoTexto
+
+                        }
+                    }
                 }
 
 
             }
-            operacion=""
+            operacion="="
         }
 
 
