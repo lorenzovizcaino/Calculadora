@@ -145,23 +145,32 @@ class MainActivity : AppCompatActivity() {
             resultadoTexto=comprobarEntero(resultado)
             binding.total.text=resultadoTexto
         }
+        binding.botonMasMenos.setOnClickListener {
+            if(binding.total.text.toString().toDouble()>0.0){
+                binding.total.text="-"+binding.total.text.toString()
+            }else{
+                var numeropositivo=Math.abs(binding.total.text.toString().toDouble())
+                resultadoTexto=comprobarEntero(numeropositivo)
+                binding.total.text=resultadoTexto
+            }
+        }
+        binding.botonRetroceso.setOnClickListener {
+            if(binding.total.text.length==1){
+                binding.total.text="0"
+            }else{
+                var longitud=binding.total.text.length
+                binding.total.text=binding.total.text.substring(0,longitud-1)
+            }
+        }
 
 
         binding.botonIgual.setOnClickListener {
 
-
-
             if(!igual){
-                binding.parcial.text=binding.parcial.text.toString()+binding.total.text.toString()+" = "
-                num2Igual=num2
-                num2= binding.total.text.toString().toDouble()
-
+               num2Igual=num2
             }
-
-
-
-            binding.total.text=""
-
+            binding.parcial.text=binding.parcial.text.toString()+binding.total.text.toString()+" = "
+            num2= binding.total.text.toString().toDouble()
 
             when(operacion){
                 "x" -> {
@@ -197,19 +206,39 @@ class MainActivity : AppCompatActivity() {
 
                     when(operacionAnterior){
                         "x" -> {
-                            println("hola")
                             binding.parcial.text=binding.total.text.toString()+" x "+comprobarEntero(num2Igual)+" = "
-                            println("hola2")
-                            var longitud=binding.total.text.toString().length
-                            println(longitud)
                             num1=binding.total.text.toString().toDouble()
                             resultado=num1*num2Igual
-                            println(resultado)
+                            resultadoTexto=comprobarEntero(resultado)
+                            binding.total.text=resultadoTexto
+
+                        }
+                        "+" -> {
+                            binding.parcial.text=binding.total.text.toString()+" + "+comprobarEntero(num2Igual)+" = "
+                            num1=binding.total.text.toString().toDouble()
+                            resultado=num1+num2Igual
+                            resultadoTexto=comprobarEntero(resultado)
+                            binding.total.text=resultadoTexto
+
+                        }
+                        "-" -> {
+                            binding.parcial.text=binding.total.text.toString()+" - "+comprobarEntero(num2Igual)+" = "
+                            num1=binding.total.text.toString().toDouble()
+                            resultado=num1-num2Igual
+                            resultadoTexto=comprobarEntero(resultado)
+                            binding.total.text=resultadoTexto
+
+                        }
+                        "÷" -> {
+                            binding.parcial.text=binding.total.text.toString()+" ÷ "+comprobarEntero(num2Igual)+" = "
+                            num1=binding.total.text.toString().toDouble()
+                            resultado=num1/num2Igual
                             resultadoTexto=comprobarEntero(resultado)
                             binding.total.text=resultadoTexto
 
                         }
                     }
+
                 }
 
 
@@ -225,7 +254,7 @@ class MainActivity : AppCompatActivity() {
         if(resultado-resultado.toInt()==0.0){
             resultadoTexto=resultado.toInt().toString()
         }else{
-            val formato = DecimalFormat("#.##")
+            val formato = DecimalFormat("#.####")
             resultadoTexto=formato.format(resultado).toString()
         }
         return resultadoTexto

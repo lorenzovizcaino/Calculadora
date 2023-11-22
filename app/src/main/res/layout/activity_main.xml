@@ -276,7 +276,7 @@
         style="@style/boton_calculadora_peq"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="1dp"
-        android:text="MR"
+        android:text="MC"
         app:layout_constraintBottom_toTopOf="@id/boton_tanto_por_ciento"
         app:layout_constraintEnd_toStartOf="@+id/boton_recuperar_memoria" />
 
