@@ -162,6 +162,14 @@ class MainActivity : AppCompatActivity() {
                 binding.total.text=binding.total.text.substring(0,longitud-1)
             }
         }
+        binding.botonTantoPorCiento.setOnClickListener {
+            binding.parcial.text=binding.total.text.toString()+"%"
+            num1=binding.total.text.toString().toDouble()
+            binding.total.text=""
+            operacion="%"
+
+
+        }
 
 
         binding.botonIgual.setOnClickListener {
@@ -201,6 +209,14 @@ class MainActivity : AppCompatActivity() {
                     binding.total.text=resultadoTexto
                     operacionAnterior="-"
                 }
+                "%" -> {
+                    igual=false;
+                    resultado=(num1/100)*num2
+                    println(resultado)
+                    resultadoTexto=comprobarEntero(resultado)
+                    binding.total.text=resultadoTexto
+                    operacionAnterior="%"
+                }
                 "=" -> {
                     igual=true
 
@@ -233,6 +249,14 @@ class MainActivity : AppCompatActivity() {
                             binding.parcial.text=binding.total.text.toString()+" ÷ "+comprobarEntero(num2Igual)+" = "
                             num1=binding.total.text.toString().toDouble()
                             resultado=num1/num2Igual
+                            resultadoTexto=comprobarEntero(resultado)
+                            binding.total.text=resultadoTexto
+
+                        }
+                        "%" -> {
+                            binding.parcial.text=binding.total.text.toString()+" % "+comprobarEntero(num2Igual)+" = "
+                            num1=binding.total.text.toString().toDouble()
+                            resultado=(num1/100)*num2Igual
                             resultadoTexto=comprobarEntero(resultado)
                             binding.total.text=resultadoTexto
 
